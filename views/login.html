@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- App icon -->
+		<link rel="shortcut icon" href="../app.ico" type="image/x-icon" />
+		<!-- Bootstrap -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+			crossorigin="anonymous"
+		/>
+		<!-- App styles -->
+		<link rel="stylesheet" href="../css/main.css" />
+		<title>Login</title>
+	</head>
+
+	<body>
+		<nav>
+			<input id="nav__toggle" type="checkbox" />
+			<a class="nav__logo" href="../">
+				<img class="logo" src="../assets/icons/app.svg" alt="" />
+				<h3>Ground <span>Zero</span></h3>
+			</a>
+			<ul class="nav__links">
+				<li><a href="../" class="nav__link">Inicio</a></li>
+				<li>
+					<a href="./login.html" class="nav__link auth">Iniciar sesión</a>
+				</li>
+			</ul>
+			<label for="nav__toggle" class="nav__burger_icon">
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+			</label>
+		</nav>
+		<main class="auth__container">
+			<div class="auth__left-image">
+				<img src="../assets/illustrations/painting.svg" alt="" />
+			</div>
+			<div class="auth__form">
+				<div class="auth__form-title">
+					<h3>
+						Inicio de sesión <br />
+						🎨
+					</h3>
+				</div>
+				<div class="auth__field">
+					<label>Usuario</label>
+					<input
+						type="text"
+						placeholder="Nombre de usuario"
+						autofocus
+						required
+					/>
+				</div>
+				<div class="auth__field">
+					<label>Contraseña</label>
+					<input type="password" placeholder="Mínimo 8 caracteres" required />
+				</div>
+				<div class="auth__btn">
+					<button>Entrar</button>
+				</div>
+				<div class="auth__redirection">
+					<p>No tienes una cuenta? <a href="./register.html">Registrarme</a></p>
+				</div>
+			</div>
+			<div class="auth__right-image">
+				<img src="../assets/illustrations/sculping.svg" alt="" />
+			</div>
+		</main>
+		<div class="go-up hidden"></div>
+		<footer id="footer">
+			<div class="footer__item">
+				<ul>
+					<li><a href="./">Artistas</a></li>
+					<li><a href="./">Ediciones limitadas</a></li>
+					<li><a href="./">Museos / Fundaciones</a></li>
+				</ul>
+			</div>
+			<div class="footer__item">
+				<h3>Nuestras redes</h3>
+				<div class="footer__links">
+					<a class="footer__link" href="https://www.facebook.com">
+						<img src="../assets/icons/facebook.svg" alt="Facebook"
+					/></a>
+					<a class="footer__link" href="https://pinterest.com">
+						<img src="../assets/icons/pinterest.svg" alt="Pinterest"
+					/></a>
+					<a class="footer__link" href="https://www.instagram.com">
+						<img src="../assets/icons/instagram.svg" alt="Instagram"
+					/></a>
+				</div>
+			</div>
+			<div class="footer__item">
+				<ul>
+					<li><a href="../">Acerca del sitio</a></li>
+					<li><a href="../">Condiciones de uso</a></li>
+					<li><a href="../">Política de privacidad</a></li>
+				</ul>
+			</div>
+		</footer>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+			crossorigin="anonymous"
+		></script>
+		<script src="../js/main.js"></script>
+	</body>
+</html>
