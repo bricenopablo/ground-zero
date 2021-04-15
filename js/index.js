@@ -5,7 +5,11 @@ let products = [];
 
 // Variables referentes elementos del HTML
 const CAROUSEL = document.querySelector('#carrusel');
+const GALLERY = document.querySelector('.art-gallery__images');
+const SEARCH = document.querySelector('#search');
 const MODALS = document.querySelector('#modals');
+const FILTERS = document.getElementsByClassName('filter');
+const FILTER_ACTIVE = document.querySelector('.filter.active');
 
 // Fetch products function
 const fetchProducts = async () => {
@@ -80,6 +84,77 @@ const populateCarousel = async () => {
 	CAROUSEL.children[1].children[0].classList.add('active');
 };
 
+const populateGallery = (category, isSearch) => {
+	GALLERY.style.opacity = 0;
+
+	setTimeout(() => {
+		GALLERY.innerHTML = '';
+
+		let filter = [];
+
+		if (category === '') {
+			filter = products.filter((item) => !item.featured);
+			FILTERS[1].classList.add('active');
+		} else {
+			filter = products.filter(
+				(item) => !item.featured && item.category === category
+			);
+		}
+
+		if (category !== '' && isSearch) {
+			filter = products.filter(
+				(item) =>
+					item.artist_name
+						.toLowerCase()
+						.includes(String(category).toLowerCase()) ||
+					item.product_name
+						.toLowerCase()
+						.includes(String(category).toLowerCase())
+			);
+		}
+
+		filter.forEach((item) => {
+			GALLERY.innerHTML += `
+    <div class="gallery__item">
+      <img src="${item.pictures[0]}" alt="${item.product_name}" />
+			<div class="view-more"><p>${item.product_name}</p><p>${item.artist_name}</p></div>
+    </div>
+    `;
+		});
+		GALLERY.style.opacity = 1;
+	}, 600);
+};
+
+const removeActiveFilter = () => {
+	for (let i = 0; i < FILTERS.length; i++) {
+		FILTERS[i].classList.remove('active');
+	}
+};
+
 fetchProducts().then(() => {
 	populateCarousel();
+	populateGallery('');
+});
+
+// Events listeners
+for (let i = 0; i < FILTERS.length; i++) {
+	FILTERS[i].addEventListener('click', function () {
+		removeActiveFilter();
+		this.classList.add('active');
+		populateGallery(this.innerHTML.toLowerCase());
+		SEARCH.children[1].value = '';
+	});
+}
+
+SEARCH.addEventListener('keyup', (e) => {
+	removeActiveFilter();
+	populateGallery(e.target.value, true);
+});
+SEARCH.addEventListener('mouseover', function () {
+	this.style.width = '100%';
+	SEARCH.children[1].style.paddingRight = '10px';
+});
+SEARCH.addEventListener('mouseleave', function () {
+	this.style.width = '49px';
+	SEARCH.children[1].style.paddingRight = 0;
 });
