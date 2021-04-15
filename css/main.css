@@ -782,3 +782,200 @@ textarea.primary-input {
     transform: scale(0.8);
   }
 }
+
+/* Media queries */
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 70%;
+  }
+  .modal-info {
+    justify-content: center;
+  }
+  .modal-desc .view-more {
+    justify-content: center;
+  }
+  .open-form:hover::after {
+    content: 'Contactanos';
+    position: relative;
+    margin-left: 1rem;
+  }
+  .open-form:hover {
+    padding: 0 16px;
+    animation-play-state: paused;
+    width: 330px;
+    border-radius: 1rem;
+    border-image-source: var(--main__border);
+    border-image-slice: 1;
+    color: var(--main__green);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .nav__link.auth {
+    padding: 0.5rem 1.3rem;
+    border-radius: 0.7rem;
+    background-color: #fff;
+    color: var(--main__green);
+    transition: all ease 300ms;
+  }
+
+  .nav__link.auth:hover {
+    border-color: #fff;
+    background: transparent;
+    color: #fff;
+  }
+
+  nav.scrolled .nav__link.auth {
+    border-color: var(--main__green);
+  }
+
+  nav.scrolled .nav__link.auth:hover {
+    background-color: var(--main__green);
+    color: #fff;
+  }
+  .auth__container {
+    height: calc(100vh - 100px);
+  }
+  .auth__left-image,
+  .auth__right-image {
+    display: block;
+    padding: 0 3rem;
+    flex: 1;
+  }
+  .auth__left-image img,
+  .auth__right-image img {
+    width: 100%;
+  }
+
+  .get-in-touch .modal-content {
+    height: 550px;
+  }
+}
+@media screen and (max-width: 768px) {
+  main {
+    row-gap: 0;
+  }
+
+  .buy-online__body {
+    row-gap: 0;
+  }
+
+  .buy-online__item:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+
+  .art-gallery {
+    margin-bottom: 10rem;
+  }
+  nav .nav__logo {
+    width: auto;
+    justify-content: center;
+  }
+  nav .nav__links {
+    position: fixed;
+    z-index: 9;
+    left: 0;
+    right: 0;
+    top: 100px;
+    bottom: 100%;
+    width: auto;
+    height: auto;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #fff;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    padding-left: 0;
+  }
+
+  nav.scrolled .nav__links {
+    background-color: var(--main__green);
+  }
+
+  nav .nav__links li a {
+    color: #000;
+  }
+
+  nav.scrolled li a {
+    color: #fff;
+  }
+
+  nav .nav__burger_icon .line {
+    background-color: #fff;
+  }
+
+  nav.scrolled .nav__links {
+    top: 110px;
+  }
+
+  nav :checked ~ .nav__links {
+    bottom: 0;
+  }
+  nav .nav__burger_icon {
+    display: block;
+  }
+
+  nav.scrolled .nav__burger_icon .line {
+    background-color: #000;
+  }
+  nav :checked ~ .nav__burger_icon .line:nth-child(1) {
+    transform: translateY(10px) rotate(225deg);
+  }
+  nav :checked ~ .nav__burger_icon .line:nth-child(3) {
+    transform: translateY(-10px) rotate(-225deg);
+  }
+  nav :checked ~ .nav__burger_icon .line:nth-child(2) {
+    opacity: 0;
+  }
+  #carrusel {
+    height: 60vh;
+  }
+  .view-more__author {
+    font-size: 2rem;
+  }
+  .view-more__piece {
+    font-size: 1rem;
+  }
+
+  .gallery__title h3 {
+    font-size: 1.2rem;
+  }
+
+  .buy-online__header p {
+    font-size: 1em;
+  }
+
+  .footer__item:nth-child(2) {
+    order: -1;
+  }
+  .footer__item ul {
+    text-align: center;
+  }
+  #modals .modal-content {
+    grid-template-columns: 1fr;
+  }
+  .modal-desc {
+    order: -1;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .top__filter p,
+  .bottom__filter p {
+    width: 85px;
+    font-size: 0.7rem;
+  }
+
+  .view-more__btn {
+    height: 3.5rem;
+    width: 9rem;
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  nav .nav__logo h3 {
+    font-size: 1.35rem;
+  }
+}
