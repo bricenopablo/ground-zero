@@ -92,7 +92,7 @@ const populateGallery = (category, isSearch) => {
 
 		let filter = [];
 
-		if (category === '') {
+		if (category === '' || category === 'todas') {
 			filter = products.filter((item) => !item.featured);
 			FILTERS[1].classList.add('active');
 		} else {
