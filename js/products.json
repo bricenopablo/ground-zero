@@ -1,0 +1,189 @@
+[
+	{
+		"product_id": "P_0922jslXNMa12",
+		"product_name": "Esculturas",
+		"artist_name": "Pablo Briceño",
+		"pictures": ["./assets/img/escultura/estatua-1.jpg"],
+		"category": "esculpido",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas hic quis dolore! Mollitia sunt, nulla minus sint recusandae nihil laborum itaque unde at expedita quos, tempore saepe distinctio fugiat est?",
+		"history": "",
+		"technique_used": "Esculpido",
+		"featured": true,
+		"price": 50990
+	},
+	{
+		"product_id": "P_aasdEadfdfd",
+		"product_name": "Mis murales",
+		"artist_name": "Juan Pablo Navarrete",
+		"pictures": [
+			"./assets/img/muralismo/elefantes.jpg",
+			"./assets/img/muralismo/oso-colores.jpg"
+		],
+		"category": "muralismo",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas hic quis dolore! Mollitia sunt, nulla minus sint recusandae nihil laborum itaque unde at expedita quos, tempore saepe distinctio fugiat est?",
+		"history": "Estaba sentado pensando... y me ilumine.",
+		"technique_used": "Lapiz y pincel",
+		"featured": true,
+		"price": 0
+	},
+	{
+		"product_id": "P_Joyas9S9N",
+		"product_name": "Mis joyas",
+		"artist_name": "Miguel González",
+		"pictures": [
+			"./assets/img/orfebreria/collar-2.jpg",
+			"./assets/img/orfebreria/anillo.jpg",
+			"./assets/img/orfebreria/collar.jpg"
+		],
+		"category": "orfebreria",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas hic quis dolore! Mollitia sunt, nulla minus sint recusandae nihil laborum itaque unde at expedita quos, tempore saepe distinctio fugiat est?",
+		"history": "",
+		"technique_used": "Las manos",
+		"featured": true,
+		"price": 1220990
+	},
+	{
+		"product_id": "muralismo-1",
+		"product_name": "mural-1",
+		"artist_name": "Juan Pablo Navarrete",
+		"pictures": ["./assets/img/gallery/mural-1.jpg"],
+		"category": "muralismo",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas hic quis dolore! Mollitia sunt, nulla minus sint recusandae nihil laborum itaque unde at expedita quos, tempore saepe distinctio fugiat est?",
+		"history": "blabla",
+		"technique_used": "Pintura",
+		"featured": false,
+		"price": 1220990
+	},
+	{
+		"product_id": "muralismo-2",
+		"product_name": "mural-2",
+		"artist_name": "Juan Pablo Navarrete",
+		"pictures": ["./assets/img/gallery/mural-2.jpg"],
+		"category": "muralismo",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas hic quis dolore! Mollitia sunt, nulla minus sint recusandae nihil laborum itaque unde at expedita quos, tempore saepe distinctio fugiat est?",
+		"history": "blabla",
+		"technique_used": "Pintura",
+		"featured": false,
+		"price": 1220990
+	},
+	{
+		"product_id": "muralismo-3",
+		"product_name": "mural-3",
+		"artist_name": "Juan Pablo Navarrete",
+		"pictures": ["./assets/img/gallery/mural-3.jpg"],
+		"category": "muralismo",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas hic quis dolore! Mollitia sunt, nulla minus sint recusandae nihil laborum itaque unde at expedita quos, tempore saepe distinctio fugiat est?",
+		"history": "blabla",
+		"technique_used": "Pintura",
+		"featured": false,
+		"price": 1220990
+	},
+	{
+		"product_id": "esculpido-1",
+		"product_name": "esculpido-1",
+		"artist_name": "Pablo Briceño",
+		"pictures": ["./assets/img/gallery/escultura-1.jpg"],
+		"category": "esculpido",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas hic quis dolore! Mollitia sunt, nulla minus sint recusandae nihil laborum itaque unde at expedita quos, tempore saepe distinctio fugiat est?",
+		"history": "blabla",
+		"technique_used": "Cincel y Combo",
+		"featured": false,
+		"price": 1220990
+	},
+	{
+		"product_id": "esculpido-2",
+		"product_name": "esculpido-2",
+		"artist_name": "Pablo Briceño",
+		"pictures": ["./assets/img/gallery/escultura-2.jpg"],
+		"category": "esculpido",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas hic quis dolore! Mollitia sunt, nulla minus sint recusandae nihil laborum itaque unde at expedita quos, tempore saepe distinctio fugiat est?",
+		"history": "blabla",
+		"technique_used": "Cincel y Combo",
+		"featured": false,
+		"price": 1220990
+	},
+	{
+		"product_id": "esculpido-3",
+		"product_name": "esculpido-3",
+		"artist_name": "Pablo Briceño",
+		"pictures": ["./assets/img/gallery/escultura-3.jpg"],
+		"category": "esculpido",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas hic quis dolore! Mollitia sunt, nulla minus sint recusandae nihil laborum itaque unde at expedita quos, tempore saepe distinctio fugiat est?",
+		"history": "blabla",
+		"technique_used": "Cincel y Combo",
+		"featured": false,
+		"price": 1220990
+	},
+	{
+		"product_id": "orfebreria-1",
+		"product_name": "orfebreria-1",
+		"artist_name": "Pablo Briceño",
+		"pictures": ["./assets/img/gallery/orfebreria-1.jpg"],
+		"category": "orfebreria",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas hic quis dolore! Mollitia sunt, nulla minus sint recusandae nihil laborum itaque unde at expedita quos, tempore saepe distinctio fugiat est?",
+		"history": "blabla",
+		"technique_used": "Manos y soplete",
+		"featured": false,
+		"price": 1220990
+	},
+	{
+		"product_id": "orfebreria-2",
+		"product_name": "orfebreria-2",
+		"artist_name": "Pablo Briceño",
+		"pictures": ["./assets/img/gallery/orfebreria-2.jpg"],
+		"category": "orfebreria",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas hic quis dolore! Mollitia sunt, nulla minus sint recusandae nihil laborum itaque unde at expedita quos, tempore saepe distinctio fugiat est?",
+		"history": "blabla",
+		"technique_used": "Manos y soplete",
+		"featured": false,
+		"price": 1220990
+	},
+	{
+		"product_id": "orfebreria-3",
+		"product_name": "orfebreria-3",
+		"artist_name": "Pablo Briceño",
+		"pictures": ["./assets/img/gallery/orfebreria-3.jpg"],
+		"category": "orfebreria",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas hic quis dolore! Mollitia sunt, nulla minus sint recusandae nihil laborum itaque unde at expedita quos, tempore saepe distinctio fugiat est?",
+		"history": "blabla",
+		"technique_used": "Manos y soplete",
+		"featured": false,
+		"price": 1220990
+	},
+	{
+		"product_id": "tejido-1",
+		"product_name": "tejido-1",
+		"artist_name": "Miguel González",
+		"pictures": ["./assets/img/gallery/tejido-1.jpg"],
+		"category": "tejido",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas hic quis dolore! Mollitia sunt, nulla minus sint recusandae nihil laborum itaque unde at expedita quos, tempore saepe distinctio fugiat est?",
+		"history": "blabla",
+		"technique_used": "Manos y soplete",
+		"featured": false,
+		"price": 1220990
+	},
+	{
+		"product_id": "tejido-2",
+		"product_name": "tejido-2",
+		"artist_name": "Miguel González",
+		"pictures": ["./assets/img/gallery/tejido-2.jpg"],
+		"category": "tejido",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas hic quis dolore! Mollitia sunt, nulla minus sint recusandae nihil laborum itaque unde at expedita quos, tempore saepe distinctio fugiat est?",
+		"history": "blabla",
+		"technique_used": "Manos y soplete",
+		"featured": false,
+		"price": 1220990
+	},
+	{
+		"product_id": "tejido-3",
+		"product_name": "tejido-3",
+		"artist_name": "Miguel González",
+		"pictures": ["./assets/img/gallery/tejido-3.jpg"],
+		"category": "tejido",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas hic quis dolore! Mollitia sunt, nulla minus sint recusandae nihil laborum itaque unde at expedita quos, tempore saepe distinctio fugiat est?",
+		"history": "blabla",
+		"technique_used": "Manos y soplete",
+		"featured": false,
+		"price": 1220990
+	}
+]
