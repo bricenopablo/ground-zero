@@ -25,6 +25,24 @@
     <title>Ground Zero</title>
   </head>
   <body>
+    <nav>
+      <input id="nav__toggle" type="checkbox" />
+      <a class="nav__logo" href="./">
+        <img class="logo" src="./assets/icons/app.svg" alt="" />
+        <h3>Ground <span>Zero</span></h3>
+      </a>
+      <ul class="nav__links">
+        <li><a href="./" class="nav__link">Inicio</a></li>
+        <li>
+          <a href="./views/login.html" class="nav__link auth">Iniciar sesión</a>
+        </li>
+      </ul>
+      <label for="nav__toggle" class="nav__burger_icon">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </label>
+    </nav>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
