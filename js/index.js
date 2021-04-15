@@ -5,6 +5,7 @@ let products = [];
 
 // Variables referentes elementos del HTML
 const CAROUSEL = document.querySelector('#carrusel');
+const MODALS = document.querySelector('#modals');
 
 // Fetch products function
 const fetchProducts = async () => {
