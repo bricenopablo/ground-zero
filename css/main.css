@@ -1,0 +1,231 @@
+/* Main font*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* App title font */
+@import url('https://fonts.googleapis.com/css2?family=Ribeye&display=swap');
+/* Author quote font */
+@import url('https://fonts.googleapis.com/css2?family=Farsan&display=swap%27');
+
+/* Main colors */
+:root {
+	--main__blue: rgb(75, 126, 246);
+	--main__green: rgb(0, 180, 75);
+  --main__border: linear-gradient(to top left, #0575e6, #00f260);
+}
+/* Reset default styles */
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+button:focus,
+input:focus {
+	outline: none;
+}
+.form-control:focus {
+	box-shadow: none;
+}
+
+nav {
+	position: sticky;
+	z-index: 10;
+	top: 0;
+	padding: 0 5%;
+	height: 100px;
+	background-color: var(--main__green);
+	display: flex;
+	align-items: center;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+		rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+	transition: all 300ms;
+}
+nav.scrolled {
+	background-color: #fff;
+	height: 110px;
+	color: #fff;
+}
+
+nav.scrolled h3,
+nav.scrolled li a {
+	color: #000;
+}
+.nav__logo img {
+	width: 50px;
+	height: 50px;
+	margin-right: 0.5rem;
+	cursor: pointer;
+}
+.nav__logo {
+	width: 40%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	font-size: 24px;
+	font-family: 'Ribeye', cursive;
+	text-decoration: none;
+}
+
+.nav__logo h3 {
+	margin-bottom: 0;
+	color: #fff;
+}
+
+.nav__logo h3 span {
+	margin-left: 0.4rem;
+	font-weight: 700;
+}
+.nav__links {
+	width: 60%;
+	height: 100%;
+	display: flex;
+	justify-content: flex-end;
+	column-gap: 8rem;
+	align-items: center;
+	margin-bottom: 0;
+}
+.nav__links li {
+	list-style: none;
+}
+.nav__links a {
+	display: block;
+	font-size: 1rem;
+	font-weight: 600;
+	color: #fff;
+	text-decoration: none;
+	border: 2px solid transparent;
+	text-transform: uppercase;
+}
+
+.nav__link:hover {
+	border-bottom-color: #fff;
+}
+
+nav.scrolled .nav__link:hover {
+	border-bottom-color: #000;
+}
+
+#nav__toggle {
+	position: absolute;
+	top: -100px;
+}
+nav .nav__burger_icon {
+	display: none;
+	position: absolute;
+	right: 5%;
+	top: 50%;
+	transform: translateY(-50%);
+}
+nav .nav__burger_icon .line {
+	width: 30px;
+	height: 5px;
+	background-color: #000;
+	margin: 5px;
+	border-radius: 3px;
+	transition: all 0.3s ease-in-out;
+}
+
+/* Carousel */
+#carrusel {
+	height: calc(100vh - 100px);
+	overflow: hidden;
+	position: relative;
+}
+.carousel-inner,
+.carousel-item {
+	height: 100%;
+}
+#carrusel img {
+	height: 100% !important;
+	object-fit: cover;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+}
+
+/* View more */
+.carousel-indicators {
+	margin: 0;
+	bottom: 20px;
+	left: 50%;
+	right: initial;
+	transform: translateX(-50%);
+}
+
+.carousel-indicators button {
+	width: 40px !important;
+	height: 5px !important;
+}
+.carousel-item.active:hover .view-more,
+.modal-desc:hover .view-more,
+.gallery__item:hover .view-more {
+	opacity: 1;
+}
+.carousel-item.active:hover .view-more__details {
+	transform: translateY(0);
+}
+.view-more {
+	background-color: rgba(0, 0, 0, 0.8);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	opacity: 0;
+	transition: opacity 300ms;
+	color: white;
+	gap: 20%;
+}
+.view-more__details {
+	transition: transform 300ms ease-out;
+	transform: translateY(-600px);
+	text-align: center;
+}
+.view-more__author {
+	font-size: 4rem;
+}
+.view-more__piece {
+	font-size: 2rem;
+}
+.view-more__btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 3.5rem;
+	width: 9rem;
+	background-color: transparent;
+	border: 3px solid white;
+	color: white;
+	transition: all 300ms;
+	letter-spacing: 2px;
+	font-weight: 600;
+  border-image-source: var(--main__border);
+  border-image-slice: 1;
+}
+.view-more__btn:hover {
+	background-image: var(--main__border);
+}
+.view-more ul {
+	list-style: none;
+}
+
+
+main {
+	padding: 2rem 0 5rem 0;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	row-gap: 10rem;
+	width: 90%;
+}
