@@ -6,7 +6,7 @@
 		"pictures": ["./assets/img/escultura/estatua-1.jpg"],
 		"category": "esculpido",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas hic quis dolore! Mollitia sunt, nulla minus sint recusandae nihil laborum itaque unde at expedita quos, tempore saepe distinctio fugiat est?",
-		"history": "",
+		"history": "Lorem ipsum dolor sit amet",
 		"technique_used": "Esculpido",
 		"featured": true,
 		"price": 50990
@@ -21,7 +21,7 @@
 		],
 		"category": "muralismo",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas hic quis dolore! Mollitia sunt, nulla minus sint recusandae nihil laborum itaque unde at expedita quos, tempore saepe distinctio fugiat est?",
-		"history": "Estaba sentado pensando... y me ilumine.",
+		"history": "Lorem ipsum dolor sit amet",
 		"technique_used": "Lapiz y pincel",
 		"featured": true,
 		"price": 0
@@ -37,7 +37,7 @@
 		],
 		"category": "orfebreria",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas hic quis dolore! Mollitia sunt, nulla minus sint recusandae nihil laborum itaque unde at expedita quos, tempore saepe distinctio fugiat est?",
-		"history": "",
+		"history": "Lorem ipsum dolor sit amet",
 		"technique_used": "Las manos",
 		"featured": true,
 		"price": 1220990
@@ -49,7 +49,7 @@
 		"pictures": ["./assets/img/gallery/mural-1.jpg"],
 		"category": "muralismo",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas hic quis dolore! Mollitia sunt, nulla minus sint recusandae nihil laborum itaque unde at expedita quos, tempore saepe distinctio fugiat est?",
-		"history": "blabla",
+		"history": "Lorem ipsum dolor sit amet",
 		"technique_used": "Pintura",
 		"featured": false,
 		"price": 1220990
@@ -61,7 +61,7 @@
 		"pictures": ["./assets/img/gallery/mural-2.jpg"],
 		"category": "muralismo",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas hic quis dolore! Mollitia sunt, nulla minus sint recusandae nihil laborum itaque unde at expedita quos, tempore saepe distinctio fugiat est?",
-		"history": "blabla",
+		"history": "Lorem ipsum dolor sit amet",
 		"technique_used": "Pintura",
 		"featured": false,
 		"price": 1220990
@@ -73,7 +73,7 @@
 		"pictures": ["./assets/img/gallery/mural-3.jpg"],
 		"category": "muralismo",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas hic quis dolore! Mollitia sunt, nulla minus sint recusandae nihil laborum itaque unde at expedita quos, tempore saepe distinctio fugiat est?",
-		"history": "blabla",
+		"history": "Lorem ipsum dolor sit amet",
 		"technique_used": "Pintura",
 		"featured": false,
 		"price": 1220990
@@ -85,7 +85,7 @@
 		"pictures": ["./assets/img/gallery/escultura-1.jpg"],
 		"category": "esculpido",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas hic quis dolore! Mollitia sunt, nulla minus sint recusandae nihil laborum itaque unde at expedita quos, tempore saepe distinctio fugiat est?",
-		"history": "blabla",
+		"history": "Lorem ipsum dolor sit amet",
 		"technique_used": "Cincel y Combo",
 		"featured": false,
 		"price": 1220990
@@ -97,7 +97,7 @@
 		"pictures": ["./assets/img/gallery/escultura-2.jpg"],
 		"category": "esculpido",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas hic quis dolore! Mollitia sunt, nulla minus sint recusandae nihil laborum itaque unde at expedita quos, tempore saepe distinctio fugiat est?",
-		"history": "blabla",
+		"history": "Lorem ipsum dolor sit amet",
 		"technique_used": "Cincel y Combo",
 		"featured": false,
 		"price": 1220990
@@ -109,7 +109,7 @@
 		"pictures": ["./assets/img/gallery/escultura-3.jpg"],
 		"category": "esculpido",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas hic quis dolore! Mollitia sunt, nulla minus sint recusandae nihil laborum itaque unde at expedita quos, tempore saepe distinctio fugiat est?",
-		"history": "blabla",
+		"history": "Lorem ipsum dolor sit amet",
 		"technique_used": "Cincel y Combo",
 		"featured": false,
 		"price": 1220990
@@ -121,7 +121,7 @@
 		"pictures": ["./assets/img/gallery/orfebreria-1.jpg"],
 		"category": "orfebreria",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas hic quis dolore! Mollitia sunt, nulla minus sint recusandae nihil laborum itaque unde at expedita quos, tempore saepe distinctio fugiat est?",
-		"history": "blabla",
+		"history": "Lorem ipsum dolor sit amet",
 		"technique_used": "Manos y soplete",
 		"featured": false,
 		"price": 1220990
@@ -133,7 +133,7 @@
 		"pictures": ["./assets/img/gallery/orfebreria-2.jpg"],
 		"category": "orfebreria",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas hic quis dolore! Mollitia sunt, nulla minus sint recusandae nihil laborum itaque unde at expedita quos, tempore saepe distinctio fugiat est?",
-		"history": "blabla",
+		"history": "Lorem ipsum dolor sit amet",
 		"technique_used": "Manos y soplete",
 		"featured": false,
 		"price": 1220990
@@ -145,7 +145,7 @@
 		"pictures": ["./assets/img/gallery/orfebreria-3.jpg"],
 		"category": "orfebreria",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas hic quis dolore! Mollitia sunt, nulla minus sint recusandae nihil laborum itaque unde at expedita quos, tempore saepe distinctio fugiat est?",
-		"history": "blabla",
+		"history": "Lorem ipsum dolor sit amet",
 		"technique_used": "Manos y soplete",
 		"featured": false,
 		"price": 1220990
@@ -157,7 +157,7 @@
 		"pictures": ["./assets/img/gallery/tejido-1.jpg"],
 		"category": "tejido",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas hic quis dolore! Mollitia sunt, nulla minus sint recusandae nihil laborum itaque unde at expedita quos, tempore saepe distinctio fugiat est?",
-		"history": "blabla",
+		"history": "Lorem ipsum dolor sit amet",
 		"technique_used": "Manos y soplete",
 		"featured": false,
 		"price": 1220990
@@ -169,7 +169,7 @@
 		"pictures": ["./assets/img/gallery/tejido-2.jpg"],
 		"category": "tejido",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas hic quis dolore! Mollitia sunt, nulla minus sint recusandae nihil laborum itaque unde at expedita quos, tempore saepe distinctio fugiat est?",
-		"history": "blabla",
+		"history": "Lorem ipsum dolor sit amet",
 		"technique_used": "Manos y soplete",
 		"featured": false,
 		"price": 1220990
@@ -181,7 +181,7 @@
 		"pictures": ["./assets/img/gallery/tejido-3.jpg"],
 		"category": "tejido",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas hic quis dolore! Mollitia sunt, nulla minus sint recusandae nihil laborum itaque unde at expedita quos, tempore saepe distinctio fugiat est?",
-		"history": "blabla",
+		"history": "Lorem ipsum dolor sit amet",
 		"technique_used": "Manos y soplete",
 		"featured": false,
 		"price": 1220990
