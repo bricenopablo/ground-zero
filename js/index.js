@@ -57,7 +57,20 @@ const populateCarousel = async () => {
 						}</p>
 					</div>
 					<div class="modal-desc">
-						<img src="${item.pictures[0]}" alt="${item.product_name}" />
+						<div id="carousel-${item.product_id}" style="height: 100%" class="carousel slide" data-bs-ride="carousel">
+							<div class="carousel-inner">
+								${item.pictures.map((pic, i) => `
+									<div class="carousel-item ${i === 0 ? 'active' : ''}">
+										<img src="${pic}" class="d-block" alt="${item.product_name}-${i+1}" />
+									</div>
+								`)}
+							</div>
+							<div class="carousel-indicators">
+								${item.pictures.map((pic, i) => `
+									<button type="button" data-bs-target="#carousel-${item.product_id}" data-bs-slide-to="${i}" aria-label="Slide ${i}" class="${i === 0 ? 'active' : ''}" aria-current="true"></button>
+								`)}
+							</div>
+						</div>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">+</button>
 						<div class="view-more">
 							<h4 class="text-center">Descripción</h4>
@@ -117,6 +130,7 @@ const populateGallery = (category, isSearch) => {
 			GALLERY.innerHTML += `
     <div class="gallery__item">
       <img src="${item.pictures[0]}" alt="${item.product_name}" />
+			
 			<div class="view-more"><p>${item.product_name}</p><p>${item.artist_name}</p></div>
     </div>
     `;
