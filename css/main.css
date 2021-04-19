@@ -146,6 +146,7 @@ nav .nav__burger_icon .line {
 #carrusel img {
   height: 100% !important;
   object-fit: cover;
+  object-position: top;
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
 }
