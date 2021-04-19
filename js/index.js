@@ -153,8 +153,9 @@ SEARCH.addEventListener('keyup', (e) => {
 SEARCH.addEventListener('mouseover', function () {
 	this.style.width = '100%';
 	SEARCH.children[1].style.paddingRight = '10px';
+	SEARCH.children[1].focus();
 });
-SEARCH.addEventListener('mouseleave', function () {
-	this.style.width = '49px';
-	SEARCH.children[1].style.paddingRight = 0;
+SEARCH.children[1].addEventListener('blur', function () {
+	SEARCH.style.width = '49px';
+	this.style.paddingRight = 0;
 });
