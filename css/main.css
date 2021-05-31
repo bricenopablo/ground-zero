@@ -1,9 +1,9 @@
 /* Main font*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 /* App title font */
-@import url('https://fonts.googleapis.com/css2?family=Ribeye&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ribeye&display=swap");
 /* Author quote font */
-@import url('https://fonts.googleapis.com/css2?family=Farsan&display=swap%27');
+@import url("https://fonts.googleapis.com/css2?family=Farsan&display=swap%27");
 
 /* Main colors */
 :root {
@@ -22,7 +22,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -70,7 +70,7 @@ nav.scrolled li a {
   display: flex;
   align-items: center;
   font-size: 24px;
-  font-family: 'Ribeye', cursive;
+  font-family: "Ribeye", cursive;
   text-decoration: none;
 }
 
@@ -430,7 +430,7 @@ main {
   padding: 0;
 }
 .modal-desc .view-more ul li {
-  font-family: 'Farsan', cursive;
+  font-family: "Farsan", cursive;
   font-size: 1.2em;
   letter-spacing: 2px;
   cursor: pointer;
@@ -455,7 +455,7 @@ main {
   display: none;
 }
 .modal-info .model-item-quote {
-  font-family: 'Farsan', cursive;
+  font-family: "Farsan", cursive;
   color: #3f3f3f;
   width: 80%;
   margin: 0 auto;
@@ -617,7 +617,7 @@ main {
   transform: rotateZ(-90deg);
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 50%;
-  background-image: url('../assets/icons/go-up.svg');
+  background-image: url("../assets/icons/go-up.svg");
   width: 50px;
   height: 50px;
   position: fixed;
@@ -797,7 +797,7 @@ textarea.primary-input {
     justify-content: center;
   }
   .open-form:hover::after {
-    content: 'Contactanos';
+    content: "Contactanos";
     position: relative;
     margin-left: 1rem;
   }
@@ -979,4 +979,64 @@ textarea.primary-input {
   nav .nav__logo h3 {
     font-size: 1.35rem;
   }
+}
+
+/* International stuff */
+
+.international {
+  border-image-source: linear-gradient(to top left, #c6ffdd, #fbd786, #f7797d);
+  padding-bottom: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.search-international {
+  width: 100%;
+  display: grid;
+  gap: 2rem;
+  justify-items: center;
+  justify-content: space-between;
+  grid-template-columns: repeat(auto-fit, minmax(calc(250px - 1rem), 1fr));
+}
+
+.search-international select,
+input {
+  width: 250px;
+  height: 40px;
+  border-radius: 0.5rem;
+  padding-left: 1rem;
+  outline: none;
+  display: block;
+  border: 2px solid grey;
+}
+
+.search-international select:focus,
+input {
+  border-color: green;
+}
+
+.gallery-international {
+  align-items: center;
+  display: grid;
+  gap: 2rem;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.image {
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  transition: transform 300ms ease;
+}
+
+.image:hover img {
+  transform: scale(1.1);
 }
