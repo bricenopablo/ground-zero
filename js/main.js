@@ -25,7 +25,7 @@ GO_UP.addEventListener("click", () => {
 });
 
 /*------------------------------------------*
- *								Temperatura								*
+ *                Temperatura               *
  *------------------------------------------*/
 
 // Obtiene el div de la temperatura

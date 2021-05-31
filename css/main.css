@@ -197,7 +197,9 @@ nav .nav__burger_icon .line {
   opacity: 0;
   transition: opacity 300ms;
   color: white;
-  gap: 20%;
+  gap: 1rem;
+  padding: 10px;
+  text-align: center;
 }
 .view-more__details {
   transition: transform 300ms ease-out;
@@ -1027,6 +1029,13 @@ input {
   border-color: green;
 }
 
+.search-field {
+  justify-content: flex-end;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
 .gallery-international {
   align-items: center;
   display: grid;
@@ -1051,4 +1060,15 @@ input {
 
 .image:hover img {
   transform: scale(1.1);
+}
+
+.msg-error {
+  background-color: crimson;
+  border-radius: 10px;
+  padding: 5px;
+  position: absolute;
+  top: -3rem;
+  color: #fff;
+  font-size: 0.75em;
+  text-align: center;
 }
