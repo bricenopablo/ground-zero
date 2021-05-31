@@ -173,3 +173,15 @@ SEARCH.children[1].addEventListener('blur', function () {
 	SEARCH.style.width = '49px';
 	this.style.paddingRight = 0;
 });
+
+//Llamamos a la API y creamos una función.
+$.get('https://api.artic.edu/api/v1/artworks', function(data){
+        console.log(data)
+		//Llamamos a cada uno de los elementos de la API y se pobla la tabla de venta internacional con las imagenes.
+        data.data.forEach(function(item){
+          const imagenurl=`https://lakeimagesweb.artic.edu/iiif/2/${item.image_id}/full/250,250/0/default.jpg`;
+          $(".gallery-international").append(`<div class='image'>
+            <img src="${imagenurl}">
+            </div>`)
+        })
+      })
