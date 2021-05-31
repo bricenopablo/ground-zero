@@ -150,6 +150,18 @@ nav .nav__burger_icon .line {
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
 }
+.modal-desc .carousel {
+  height: 100%;
+}
+.modal-desc .carousel-indicators {
+  left: initial;
+  right: 10px;
+  bottom: 0;
+  transform: initial;
+}
+.modal-desc .carousel-indicators button {
+  width: 20px !important;
+}
 
 /* View more */
 .carousel-indicators {
