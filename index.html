@@ -102,30 +102,24 @@
         <div class="gallery__title">
           <h3>Venta internacional</h3>
         </div>
-        <div class="search-international">
-          <div class="search-field">
-            <label for="name">Nombre:</label>
-            <input type="text" />
+        <form id="search-art">
+          <div class="search-international">
+            <div class="search-field">
+              <label for="name">Nombre de obra</label>
+              <input type="text" name="name" id="name" />
+            </div>
+            <div class="search-field">
+              <label for="artist">Artista</label>
+              <select name="artist" id="artist">
+                <option value="none" selected>Ninguno</option>
+              </select>
+            </div>
+            <div class="search-field">
+              <button class="btn-send" type="submit">Buscar</button>
+            </div>
           </div>
-          <div class="search-field">
-            <label for="art-gallery__filters">Artista</label>
-            <input type="text" />
-          </div>
-          <div class="search-field">
-            <label for="origin">País de origin</label>
-            <select id="origin">
-              <option value="el mismisimo">El mismisimo</option>
-            </select>
-          </div>
-        </div>
-        <div class="gallery-international">
-          <div class="image">
-            <img
-              src="https://cdn2.mediotiempo.com/uploads/media/2021/02/13/las-imagenes-del-dia-del-11.jpg"
-              alt=""
-            />
-          </div>
-        </div>
+        </form>
+        <div class="gallery-international"></div>
         <div class="art-gallery__images"></div>
       </section>
       <section id="buy-online">
@@ -262,6 +256,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/index.js"></script>
   </body>
