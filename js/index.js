@@ -255,10 +255,23 @@ $("#search-art").validate({
       minlength: "Debe ingresar por lo menos 3 caracteres",
     },
   },
-  errorPlacement: function (error, element) {
-    const msgError = $(`<div class="msg-error"></div>`);
-    error.appendTo(msgError);
-    msgError.appendTo(element.parent());
+  showErrors: function (errorMap, errorList) {
+    // Si el numero de errores es mayor a 0 entonces se muestran los errores
+    if (this.numberOfInvalids() > 0) {
+      $("#errors").show();
+      $("#errors").html(
+        "Tienes " +
+          this.numberOfInvalids() +
+          " error(es):<ul>" +
+          errorList.map(function (error) {
+            return "<li>" + error.message + "</li>";
+          }) +
+          "</ul>"
+      );
+      // Si no, entonces se oculta
+    } else {
+      $("#errors").hide();
+    }
   },
   submitHandler: function (form) {
     const name = $("#name").val();
