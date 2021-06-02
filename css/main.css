@@ -197,7 +197,9 @@ nav .nav__burger_icon .line {
   opacity: 0;
   transition: opacity 300ms;
   color: white;
-  gap: 20%;
+  gap: 1rem;
+  padding: 10px;
+  text-align: center;
 }
 .view-more__details {
   transition: transform 300ms ease-out;
@@ -738,14 +740,16 @@ textarea.primary-input {
 .btn-send {
   text-transform: uppercase;
   color: white;
-  padding: 10px;
+  height: 40px;
+  padding: 0 4rem;
   width: 100%;
-  border-radius: 50px;
+  border-radius: 0.5rem;
   border: 2px solid var(--main__green);
   background-color: var(--main__green);
   letter-spacing: 3px;
   font-weight: 600;
   transition: background 300ms;
+  display: block;
 }
 .btn-send:hover {
   border-color: var(--main__green);
@@ -1027,11 +1031,19 @@ input {
   border-color: green;
 }
 
+.search-field {
+  justify-content: flex-end;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
 .gallery-international {
   align-items: center;
   display: grid;
   gap: 2rem;
   justify-items: center;
+  justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
@@ -1051,4 +1063,18 @@ input {
 
 .image:hover img {
   transform: scale(1.1);
+}
+
+.msg-error {
+  background-color: crimson;
+  border-radius: 10px;
+  padding: 5px;
+  position: absolute;
+  top: -3rem;
+  color: #fff;
+  font-size: 0.75em;
+  text-align: center;
+}
+#errors {
+  display: none;
 }
