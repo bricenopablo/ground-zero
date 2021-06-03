@@ -7,6 +7,7 @@ Proyecto de desarrollo web responsive que representa la **Evaluación N°1**.
 - HTML5.
 - CSS3 (flexbox, grid, media-queries).
 - JavaScript.
+- Jquery.
 
 ## Quiénes somos
 
@@ -18,10 +19,12 @@ Somos estudiantes de Duoc UC cursando el tercer semestre.
 
 ## Incluye
 
-- [x] Mini base de datos (JSON) para los productos.
+- [x] Consumo de bd local en formato JSON.
 - [x] Carrusel con productos destacados.
 - [x] Galería con productos filtrables.
 - [x] Barra de busqueda funcional.
+- [x] Consumo de api de arte.
+- [x] Consumo de api de clima.
 
 ## Recursos utilizados
 
@@ -30,6 +33,8 @@ Somos estudiantes de Duoc UC cursando el tercer semestre.
 - Flaticon - https://www.flaticon.com/
 - unDraw - https://undraw.co/illustrations
 - Font Awesome - https://fontawesome.com/
+- API de arte - https://api.artic.edu/docs/#introduction
+- API de clima - https://openweathermap.org/
 
 ## Wireframes & Mockups
 
