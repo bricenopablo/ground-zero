@@ -1075,3 +1075,6 @@ input {
   font-size: 0.75em;
   text-align: center;
 }
+#errors {
+  display: none;
+}
