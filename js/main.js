@@ -2,6 +2,7 @@
 const NAVBAR = document.querySelector("nav");
 const GO_UP = document.querySelector(".go-up");
 
+
 // Events listeners
 window.addEventListener("scroll", function () {
   if (this.scrollY > 130) {
