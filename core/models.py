@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 # Create your models here.
 class Categoria(models.Model):
@@ -16,7 +17,7 @@ class Artista(models.Model):
   email = models.CharField(max_length=255, verbose_name="Email del artista")
   clave = models.CharField(max_length=255, verbose_name="Contraseña del artista")
   def __str__(self):
-      return self.nombreArtista
+    return f"{self.pNombre} {self.sNombre} {self.apPaterno} {self.apMaterno}"
 
 class Arte(models.Model):
   idArte = models.IntegerField(primary_key=True, verbose_name="Id de Arte")
@@ -25,12 +26,14 @@ class Arte(models.Model):
   historiaArte = models.CharField(max_length=255, verbose_name="Historia sobre el arte")
   tecnicaUsada = models.CharField(max_length=60, verbose_name="Tecnica usada en el arte")
   destacado = models.BooleanField(default=False, verbose_name="El arte es destacado o no")
-  precio = models.IntegerField(verbose_name="Precio del arte")
-  idArtista = models.ForeignKey(Artista, on_delete=models.CASCADE)
+  precio = models.IntegerField(default=0, verbose_name="Precio del arte")
+  fechaSubida = models.DateField(default=datetime.now, verbose_name="Fecha de subida del arte")
+  idCategoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, verbose_name="Categoría")
+  idArtista = models.ForeignKey(Artista, on_delete=models.CASCADE, verbose_name="Artista")
   def __str__(self):
-    return self.nombreArte
+    return f"{self.nombreArte} | {self.idArtista}"
       
 class Imagen(models.Model):
   idImagen = models.IntegerField(primary_key=True, verbose_name="Id de Imagen")
   url = models.CharField(max_length=255, verbose_name="URL de la imagen")
-  idArte = models.ForeignKey(Arte, on_delete=models.CASCADE);
+  idArte = models.ForeignKey(Arte, on_delete=models.CASCADE, verbose_name="Arte")
