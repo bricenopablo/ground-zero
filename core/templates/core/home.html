@@ -1,0 +1,186 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block head %}
+<title>Ground Zero - Inicio</title>
+{% endblock %}
+
+{% block body %}
+<section id="hero">
+  <div id="carrusel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators"></div>
+    <div class="carousel-inner"></div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carrusel"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carrusel"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</section>
+<main>
+  <section class="art-gallery">
+    <div class="gallery__title">
+      <h3>
+        Solo exhibición <br />
+        Próximamente en venta
+      </h3>
+    </div>
+    <div class="art-gallery__filters">
+      <div class="top__filter">
+        <p class="filter">Esculpido</p>
+        <p class="filter active">Todas</p>
+        <p class="filter">Orfebreria</p>
+      </div>
+      <div class="bottom__filter">
+        <p class="filter">Muralismo</p>
+        <p class="filter">Tejido</p>
+      </div>
+    </div>
+    <div class="art-gallery__search">
+      <div id="search">
+        <i class="fas fa-search"></i>
+        <input
+          type="text"
+          class="form-control primary-input"
+          placeholder="Buscar por obra o artista"
+        />
+      </div>
+    </div>
+    <div class="art-gallery__images"></div>
+  </section>
+  <section class="art-gallery international">
+    <div class="gallery__title">
+      <h3>Venta internacional</h3>
+      <div id="errors" class="alert alert-danger"></div>
+    </div>
+    <form id="search-art">
+      <div class="search-international">
+        <div class="search-field">
+          <label for="name">Nombre de obra</label>
+          <input type="text" name="name" id="name" />
+        </div>
+        <div class="search-field">
+          <label for="artist">Artista</label>
+          <select name="artist" id="artist">
+            <option value="none" selected>Ninguno</option>
+          </select>
+        </div>
+        <div class="search-field">
+          <button class="btn-send" type="submit">Buscar</button>
+        </div>
+      </div>
+    </form>
+    <div class="gallery-international"></div>
+    <div class="art-gallery__images"></div>
+  </section>
+  <section id="buy-online">
+    <div class="buy-online__header">
+      <h2>Compra arte en línea</h2>
+      <p>Pero, por qué Ground Zero?</p>
+    </div>
+    <div class="buy-online__body">
+      <div class="buy-online__item">
+        <h3>Garantía</h3>
+        <img src="{% static 'core/img/icons/guarantee.svg' %}" alt="Garantía" />
+        <p>
+          En Ground Zero puedes comprar arte online con todas las garantías de
+          un entorno certificado como seguro, escogiendo el sistema de pago de
+          tu mayor confianza.
+        </p>
+      </div>
+      <div class="buy-online__item">
+        <h3>Calidad</h3>
+        <img src="{% static 'core/img/icons/quality.svg' %}" alt="Calidad" />
+        <p>
+          En Ground Zero puedes comprar originales, ejemplares de ediciones
+          limitadas y láminas de calidad museo.
+        </p>
+      </div>
+      <div class="buy-online__item">
+        <h3>Premiados</h3>
+        <img src="{% static 'core/img/icons/best.svg' %}" alt="Premiados" />
+        <p>
+          Gran parte de nuestras piezas en exhibición han sido premiadas y
+          reconocidas internacionalmente por instituciones prestigiosas de gran
+          reputación.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+<div class="get-in-touch">
+  <button class="open-form" data-bs-target="#contact-us" data-bs-toggle="modal">
+    <img src="{% static 'core/img/icons/message.svg' %}" alt="Enviar mensaje" />
+  </button>
+  <div class="modal fade" id="contact-us">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+      <div class="modal-content">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+        <div class="modal-body">
+          <img
+            src="{% static 'core/img/illustrations/contact-us.svg' %}"
+            alt="Contáctanos"
+          />
+          <form>
+            <h5 class="modal-title">Contáctanos</h5>
+            <div class="form-group">
+              <i class="fas fa-user"></i>
+              <input
+                class="form-control primary-input"
+                type="text"
+                id="nombre"
+                placeholder="Nombre"
+                autofocus
+              />
+            </div>
+            <div class="form-group">
+              <i class="fas fa-at"></i>
+              <input
+                class="form-control primary-input"
+                type="email"
+                id="email"
+                placeholder="E-mail"
+              />
+            </div>
+            <div class="form-group">
+              <i class="fas fa-envelope"></i>
+              <textarea
+                class="form-control primary-input"
+                id="message"
+                placeholder="Mensaje"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-send">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js"></script>
+<script src="{% static 'core/js/index.js' %}"></script>
+{% endblock %}

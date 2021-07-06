@@ -1,0 +1,53 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block head %}
+<title>Ground Zero - Registro</title>
+{% endblock %}
+
+{% block body %}
+<main class="auth__container">
+  <div class="auth__left-image">
+    <img src="{% static 'core/illustrations/sculping.svg' %}" alt="" />
+  </div>
+  <div class="auth__form">
+    <div class="auth__form-title">
+      <h3>
+        Registro <br />
+        🔥
+      </h3>
+    </div>
+    <div class="auth__field">
+      <label>Nombre completo</label>
+      <input
+        type="text"
+        placeholder="Nombre y Apellido"
+        autofocus
+        required
+      />
+    </div>
+    <div class="auth__field">
+      <label>Usuario</label>
+      <input type="text" placeholder="Nombre de usuario" required />
+    </div>
+    <div class="auth__field">
+      <label>Contraseña</label>
+      <input type="password" placeholder="Mínimo 8 caracteres" required />
+    </div>
+    <div class="auth__field">
+      <label>Repetir contraseña</label>
+      <input type="password" placeholder="Ambas deben coincidir" required />
+    </div>
+    <div class="auth__btn">
+      <button>Registrarme</button>
+    </div>
+    <div class="auth__redirection">
+      <p>Ya tienes una cuenta? <a href="{% url 'login' %}">Entrar</a></p>
+    </div>
+  </div>
+  <div class="auth__right-image">
+    <img src="{% static 'core/illustrations/painting.svg' %}" alt="" />
+  </div>
+</main>
+{% endblock %}
