@@ -9,8 +9,25 @@
 {% block body %}
 <section id="hero">
   <div id="carrusel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators"></div>
-    <div class="carousel-inner"></div>
+    <div class="carousel-indicators">
+      {% for destacado in destacados %}
+      <button type="button" class="{% if forloop.counter0 == 0 %}active{% endif %}" data-bs-target="#carrusel" data-bs-slide-to="{{ forloop.counter0 }}" aria-current="true" aria-label="Slide {{ forloop.counter }}"></button>
+      {% endfor %}
+    </div>
+    <div class="carousel-inner">
+      {% for destacado in destacados %}
+      <div class="carousel-item{% if forloop.counter0 == 0 %} active{% endif %}">
+        <img src="{{ destacado.get_first_image.imagen.url }}" class="d-block w-100" alt="{{ destacado.nombreArte }}" />
+        <div class="view-more">
+          <div class="view-more__details">
+            <h3 class="view-more__author">{{destacado.idArtista}}</h3>
+            <p class="view-more__piece">{{destacado.nombreArte}}</p>
+          </div>
+          <a href="" class="view-more__btn">Más detalles</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
     <button
       class="carousel-control-prev"
       type="button"
@@ -60,7 +77,16 @@
         />
       </div>
     </div>
-    <div class="art-gallery__images"></div>
+    <div class="art-gallery__images">
+      {% for arte in artes %}
+      <div class="gallery__item">
+        <img src="{{ arte.get_first_image.imagen.url }}" alt="{{ arte.nombreArte }}">
+        <div class="view-more">
+          <p>{{ arte.nombreArte }}</p><p>{{ arte.idArtista }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
   </section>
   <section class="art-gallery international">
     <div class="gallery__title">

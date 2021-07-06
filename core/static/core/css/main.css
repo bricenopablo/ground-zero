@@ -226,6 +226,7 @@ nav .nav__burger_icon .line {
   font-weight: 600;
   border-image-source: var(--main__border);
   border-image-slice: 1;
+  text-decoration: none;
 }
 .view-more__btn:hover {
   background-image: var(--main__border);
