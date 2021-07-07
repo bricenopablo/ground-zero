@@ -96,7 +96,6 @@ function galleryImage(item) {
 $.get(
   "https://api.artic.edu/api/v1/artworks?fields=title,artist_display,image_id,place_of_origin",
   function (data) {
-    console.log(data);
     //Llamamos a cada uno de los elementos de la API y se pobla la tabla de venta internacional con las imagenes.
     data.data.forEach(function (item) {
       galleryImage(item);
@@ -121,15 +120,30 @@ $.get("https://api.artic.edu/api/v1/artists", function (artists) {
 
 $("#artist").on("change", function () {
   const artistID = $(this).val();
-  GALLERY_INT.empty();
-  $.get(`https://api.artic.edu/api/v1/artists/${artistID}`, function (artist) {
-    artist.data.artwork_ids.forEach(function (id) {
-      $.get(`https://api.artic.edu/api/v1/artworks/${id}`, function (item) {
-        galleryImage(item.data);
-        console.log(item);
-      });
-    });
-  });
+  GALLERY_INT.html(`<div class="loading" style="display: none"></div>`);
+  if (artistID !== "none") {
+    $.get(
+      `https://api.artic.edu/api/v1/artists/${artistID}`,
+      function (artist) {
+        artist.data.artwork_ids.forEach(function (id) {
+          $.get(`https://api.artic.edu/api/v1/artworks/${id}`, function (item) {
+            galleryImage(item.data);
+          });
+        });
+      }
+    );
+  } else {
+    GALLERY_INT.html(
+      "No has seleccionado algún artista o buscado alguna obra."
+    );
+  }
+});
+
+$(document).bind("ajaxStart.art-gallery__images", function () {
+  $(".loading").css("display", "block");
+});
+$(document).bind("ajaxStop.art-gallery__images", function () {
+  $(".loading").css("display", "none");
 });
 
 $("#search-art").validate({
