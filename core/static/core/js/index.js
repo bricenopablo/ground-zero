@@ -186,18 +186,21 @@ $("#search-art").validate({
     $("#artist").val("none");
 
     const url = `https://api.artic.edu/api/v1/artworks/search?q=${name}`;
+    GALLERY_INT.html(`<div class="loading" style="display: none"></div>`);
     $.get(url, function (data) {
-      console.log(data);
-      GALLERY_INT.empty();
-      data.data.forEach(function (item) {
-        $.get(
-          item.api_link +
-            "?fields=title,artist_display,image_id,place_of_origin",
-          function (element) {
-            galleryImage(element.data);
-          }
-        );
-      });
+      if (data.data.length !== 0) {
+        data.data.forEach(function (item) {
+          $.get(
+            item.api_link +
+              "?fields=title,artist_display,image_id,place_of_origin",
+            function (element) {
+              galleryImage(element.data);
+            }
+          );
+        });
+      } else {
+        GALLERY_INT.html("No se ha encontrado resultados.");
+      }
     });
   },
 });
