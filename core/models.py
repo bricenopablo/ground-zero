@@ -16,8 +16,15 @@ class Artista(models.Model):
   apMaterno = models.CharField(max_length=50, verbose_name="Apellido materno del artista", null=True)
   email = models.CharField(max_length=255, verbose_name="Email del artista")
   clave = models.CharField(max_length=255, verbose_name="Contraseña del artista")
-  def __str__(self):
+
+  def get_full_name(self):
     return f"{self.pNombre} {self.sNombre} {self.apPaterno} {self.apMaterno}"
+
+  def natural_key(self):
+    return self.get_full_name()
+
+  def __str__(self):
+    return self.get_full_name()
 
 class Arte(models.Model):
   idArte = models.IntegerField(primary_key=True, verbose_name="Id de Arte")
