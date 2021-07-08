@@ -145,60 +145,62 @@
                     fill="var(--main__green)" />
             </svg>
         </div>
-        <form class="add-form">
-            <div class="close-form">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-                    focusable="false" width="2em" height="2em"
-                    style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"
-                    preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
-                    <path
-                        d="M16 2C8.2 2 2 8.2 2 16s6.2 14 14 14s14-6.2 14-14S23.8 2 16 2zm5.4 21L16 17.6L10.6 23L9 21.4l5.4-5.4L9 10.6L10.6 9l5.4 5.4L21.4 9l1.6 1.6l-5.4 5.4l5.4 5.4l-1.6 1.6z"
-                        fill="#fff" />
-                </svg>
-            </div>
-            <h2>Nueva pieza de arte</h2>
-            <div class="form-field">
-                <label>Artista</label>
-                <select>
-                    <option value="el-mismisimo-1">El mismisimo 1</option>
-                    <option value="el-mismisimo-2">El mismisimo 2</option>
-                    <option value="el-mismisimo-3">El mismisimo 3</option>
-                    <option value="el-mismisimo-4">El mismisimo 4</option>
-                </select>
-            </div>
-            <div class="form-field">
-                <label> Nombre de pieza</label>
-                <input type="text">
-            </div>
-            <div class="form-field">
-                <label>Tenica usada</label>
-                <input type="text">
-            </div>
-            <div class="form-field">
-                <label>Precio</label>
-                <input type="number">
-            </div>
-            <div class="form-field">
-                <label>Descripción</label>
-                <textarea cols="30" rows="10"></textarea>
-            </div>
-            <button class="add-art">Agregar</button>
-        </form>
     </div>
-
+    <form class="add-form">
+        <div class="close-form">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
+                focusable="false" width="2em" height="2em"
+                style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"
+                preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+                <path
+                    d="M16 2C8.2 2 2 8.2 2 16s6.2 14 14 14s14-6.2 14-14S23.8 2 16 2zm5.4 21L16 17.6L10.6 23L9 21.4l5.4-5.4L9 10.6L10.6 9l5.4 5.4L21.4 9l1.6 1.6l-5.4 5.4l5.4 5.4l-1.6 1.6z"
+                    fill="#fff" />
+            </svg>
+        </div>
+        <h2>Nueva pieza de arte</h2>
+        <div class="form-field">
+            <label>Artista</label>
+            <select>
+                <option value="el-mismisimo-1">El mismisimo 1</option>
+                <option value="el-mismisimo-2">El mismisimo 2</option>
+                <option value="el-mismisimo-3">El mismisimo 3</option>
+                <option value="el-mismisimo-4">El mismisimo 4</option>
+            </select>
+        </div>
+        <div class="form-field">
+            <label> Nombre de pieza</label>
+            <input type="text">
+        </div>
+        <div class="form-field">
+            <label>Tenica usada</label>
+            <input type="text">
+        </div>
+        <div class="form-field">
+            <label>Precio</label>
+            <input type="number">
+        </div>
+        <div class="form-field">
+            <label>Descripción</label>
+            <textarea cols="30" rows="10"></textarea>
+        </div>
+        <button class="add-art">Agregar</button>
+    </form>
     <script>
         const ADD_BTN = document.querySelector(".add-btn svg");
         const ADD_FORM = document.querySelector(".add-form");
         const CLOSE_FORM = document.querySelector(".close-form");
+        const ADMIN_MAIN = document.querySelector(".admin-main");
 
         ADD_BTN.addEventListener("click", () => {
             ADD_FORM.classList.toggle('active');
             ADD_BTN.style.display = 'none';
+            ADMIN_MAIN.style.display = 'none';
         })
 
         CLOSE_FORM.addEventListener("click", () => {
             ADD_FORM.classList.remove("active");
             ADD_BTN.style.display = 'initial';
+            ADMIN_MAIN.style.display = 'initial';
         })
     </script>
 </body>
@@ -301,10 +303,10 @@
 
     .add-form {
         display: none;
-        position: absolute;
+        position: relative;
         width: 90%;
         height: auto;
-        margin: 0 auto;
+        margin: 1rem auto;
         background: var(--main__green);
         border-radius: .5rem;
         padding: 5%;
@@ -381,12 +383,21 @@
             height: 4.5em;
         }
 
+        .add-form .form-field {
+            width: 300px;
+        }
+
+        .form-field label {
+            font-size: 1.2rem;
+        }
+
         .add-form.active {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             justify-items: center;
             padding-top: 6rem;
-            height: 500px;
+            height: calc(100vh - 120px - 2rem);
+            margin: auto;
         }
 
         .add-form.active h2 {
@@ -398,8 +409,13 @@
 
         .close-form {
             position: absolute;
-            top: 1rem;
-            right: 1rem;
+            top: 2rem;
+            right: 2rem;
+        }
+
+        .close-form svg {
+            width: 2.5em;
+            height: 2.5em;
         }
     }
 </style>
