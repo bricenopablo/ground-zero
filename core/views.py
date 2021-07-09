@@ -1,5 +1,5 @@
 from rest_framework.response import Response
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.db.models import Q
 from .models import Arte, Imagen
 from django.core import serializers
@@ -37,10 +37,13 @@ def register(request):
   return render(request, 'core/register.html')
 
 def arte(request, id):
-  arte = Arte.objects.get(idArte=id)
+  arte = get_object_or_404(Arte,pk=id)
   imagenes = Imagen.objects.filter(idArte=id)
   contexto = {
     "arte": arte,
     "imagenes": imagenes
   }
   return render(request, 'core/arte.html', contexto)
+
+def error404(request, exception):
+  return render(request, 'core/404.html')

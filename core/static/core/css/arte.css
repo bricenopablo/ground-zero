@@ -1,5 +1,7 @@
 #imagenes {
   height: 500px;
+  border-radius: 1rem;
+  overflow: hidden;
 }
 #imagenes img {
   height: 100% !important;
@@ -17,8 +19,7 @@
   padding: 1rem;
 }
 .card-body {
-  padding: 4rem;
-  padding-top: 0;
+  padding: 2rem;
 }
 
 @media screen and (max-width: 768px) {
