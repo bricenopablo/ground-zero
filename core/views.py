@@ -1,7 +1,7 @@
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404, render
 from django.db.models import Q
-from .models import Arte, Imagen
+from .models import Arte, Categoria, Imagen
 from django.core import serializers
 import json
 from .serializers import ArteSerializer
@@ -11,6 +11,7 @@ from django.http import HttpResponse
 def home(request):
   arte = Arte.objects.all()
   destacados = Arte.objects.filter(destacado=True)
+  categorias = Categoria.objects.all()
 
   if 'search' in request.GET:
     busqueda = request.GET['search']
@@ -27,6 +28,7 @@ def home(request):
   contexto = {
     "artes": arte,
     "destacados": destacados,
+    "categorias": categorias
   }
   return render(request, 'core/home.html', contexto)
 

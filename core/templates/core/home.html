@@ -16,6 +16,9 @@
       {% endfor %}
     </div>
     <div class="carousel-inner">
+      {% if destacados|length == 0 %}
+        <h2 class="text-center pt-5">No hay artes destacadas disponibles</h2>
+      {% endif %}
       {% for destacado in destacados %}
       <div
         class="carousel-item{% if forloop.counter0 == 0 %} active{% endif %}"
@@ -64,16 +67,16 @@
       </h3>
     </div>
     <div class="art-gallery__filters">
-      <div class="top__filter">
-        <button class="filter">Esculpido</button>
+      {% if categorias|length == 0 %}
+        <p>No hay categorías disponibles</p>
+      {% endif %}
+      {% for categoria in categorias %}
+        <button class="filter">{{ categoria.nombreCategoria }}</button>
+        {% if forloop.counter == 1 %}
         <button class="filter active">Todas</button>
-        <button class="filter">Orfebreria</button>
+        {% endif %}
+      {% endfor %}
       </div>
-      <div class="bottom__filter">
-        <button class="filter">Muralismo</button>
-        <button class="filter">Tejido</button>
-      </div>
-    </div>
     <div class="art-gallery__search">
       <form id="search">
         <i class="fas fa-search"></i>
