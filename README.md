@@ -62,7 +62,7 @@ Instalar con: ```pip install -r requirements.txt```
 Viene con un SQL para la inserción de datos, usuario administrador y superusuario
 
 Datos de superusuario:
-  - Nombre: super
+  - Nombre: superuser
   - Contraseña: admin1234
 
 Datos de administrador:
