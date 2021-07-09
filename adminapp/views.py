@@ -51,7 +51,7 @@ def insertar_arte(request):
     else:
         formulario = ArteForm()
         formset = ImageFormSet(queryset= Imagen.objects.none())
-    return redirect('admin-home', request.session['admin'])
+    return redirect('admin-home')
 
 def auth(request):
     if ('admin' in request.session):
