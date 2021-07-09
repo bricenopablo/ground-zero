@@ -144,8 +144,12 @@ button{
   flex-direction: row;
   align-items: center;
 }
-.form-field:last-of-type label {
+.edit-form .form-field:last-of-type label,
+.art-form .form-field:nth-of-type(7) label {
   margin-right: 1rem;
+}
+.form-field:last-of-type {
+  margin-bottom: 1rem;
 }
 .art-form__footer {
   display: flex;

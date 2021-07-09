@@ -11,7 +11,7 @@
 <div class="admin-main">
   <div class="admin-card">
     <h2>Editando {{ arte.nombreArte }}</h2>
-    <form method="POST">
+    <form method="POST" class="edit-form">
         {% csrf_token %}
 
         {% if arteForm.errors %}
