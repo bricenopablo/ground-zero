@@ -10,7 +10,8 @@ ImageFormSet = modelformset_factory(Imagen, form=ImagenForm, extra=1)
 formset = ImageFormSet(queryset= Imagen.objects.none())
 
 # Create your views here.
-def home(request):
+def home(request, id):
+    admin = Administrador.objects.get(idAdmin=id)
     arte = Arte.objects.all()
     artista = Artista.objects.all()
     categoria = Categoria.objects.all()
@@ -20,7 +21,8 @@ def home(request):
         'artista': artista,
         'categorias': categoria,
         'formulario': ArteForm,
-        'formset': formset
+        'formset': formset,
+        'admin': admin
     }
     return render(request, 'adminapp/home.html', context)
 
@@ -54,8 +56,9 @@ def auth(request):
         if(formulario.is_valid()):
             user_name = request.POST['nombreUsuario']
             user_pass = request.POST['contrasena']
-            if(Administrador.objects.filter(nombreUsuario=user_name, contrasena=user_pass).count() == 1):
-                return redirect('admin-home')
+            admin = Administrador.objects.filter(nombreUsuario=user_name, contrasena=user_pass)
+            if(admin.count() == 1):
+                return redirect('admin-home', admin.first().idAdmin)
             else:
                 mensaje['error'] = 'Credenciales incorrectas'
         else:
