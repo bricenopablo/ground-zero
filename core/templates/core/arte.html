@@ -1,0 +1,70 @@
+{% extends 'core/base.html' %} {% load static %} {% block head %}
+<title>Ground Zero - {{ arte.nombreArte }}</title>
+<link rel="stylesheet" type="text/css" href="{% static 'core/css/arte.css' %}" />
+{% endblock %} {% block body %}
+<main>
+  <div class="card">
+    {% if arte.destacado %}<h2 class="p-4 text-center">Destacado</h2>{% endif %}
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-12 col-lg-6">
+          <div id="imagenes" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              {% for imagen in imagenes %}
+              <button
+                type="button"
+                class="{% if forloop.counter0 == 0 %}active{% endif %}"
+                data-bs-target="#imagenes"
+                data-bs-slide-to="{{ forloop.counter0 }}"
+                aria-current="true"
+                aria-label="Slide {{ forloop.counter }}"
+              ></button>
+              {% endfor %}
+            </div>
+            <div class="carousel-inner">
+              {% for imagen in imagenes %}
+              <div
+                class="carousel-item{% if forloop.counter0 == 0 %} active{% endif %}"
+              >
+                <img
+                  src="{{ imagen.imagen.url }}"
+                  class="d-block w-100"
+                  alt="{{ imagen.nombreArte }}"
+                />
+              </div>
+              {% endfor %}
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#imagenes"
+              data-bs-slide="prev"
+            >
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#imagenes"
+              data-bs-slide="next"
+            >
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <div class="col-sm-12 col-lg-6">
+          <ul class="art-info">
+            <li><b>Nombre de arte:</b> {{arte.nombreArte}}</li>
+            <li><b>Nombre de artista:</b> {{arte.idArtista}}</li>
+            <li><b>Descripción:</b> {{arte.descripcionArte}}</li>
+            <li><b>Publicado:</b> {{ arte.fechaSubida }}</li>
+            <li><b>Precio:</b> {%if arte.precio == 0%} Gratis {% else %} {{arte.precio}} {%endif%}</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+  </div>
+</main>
+{% endblock %}

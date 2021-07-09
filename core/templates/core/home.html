@@ -30,7 +30,7 @@
             <h3 class="view-more__author">{{destacado.idArtista}}</h3>
             <p class="view-more__piece">{{destacado.nombreArte}}</p>
           </div>
-          <a href="" class="view-more__btn">Más detalles</a>
+          <a href="{% url 'arte' destacado.idArte %}" class="view-more__btn">Más detalles</a>
         </div>
       </div>
       {% endfor %}
@@ -95,7 +95,7 @@
         <div class="view-more">
           <p>{{ arte.nombreArte }}</p>
           <p>{{ arte.idArtista }}</p>
-          <a href="" class="view-more__btn">Más detalles</a>
+          <a href="{% url 'arte' arte.idArte %}" class="view-more__btn">Más detalles</a>
         </div>
       </div>
       {% endfor %}

@@ -37,8 +37,10 @@ def register(request):
   return render(request, 'core/register.html')
 
 def arte(request, id):
-  arte = Arte.objects.get(arteId=id)
+  arte = Arte.objects.get(idArte=id)
+  imagenes = Imagen.objects.filter(idArte=id)
   contexto = {
-    "arte": arte
+    "arte": arte,
+    "imagenes": imagenes
   }
   return render(request, 'core/arte.html', contexto)

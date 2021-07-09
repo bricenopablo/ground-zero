@@ -2,81 +2,103 @@
 
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- App icon -->
+    <link
+      rel="shortcut icon"
+      href="{% static 'core/img/app.ico' %}"
+      type="image/x-icon"
+    />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
+    <!-- App styles -->
+    <link rel="stylesheet" href="{% static 'core/css/main.css' %}" />
+    {% block head %}{% endblock %}
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- App icon -->
-  <link rel="shortcut icon" href="{% static 'core/img/app.ico' %}" type="image/x-icon" />
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous" />
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-    crossorigin="anonymous" />
-  <!-- App styles -->
-  <link rel="stylesheet" href="{% static 'core/css/main.css' %}" />
-  {% block head %}{% endblock %}
-</head>
-
-<body>
-  <nav>
-    <input id="nav__toggle" type="checkbox" />
-    <a class="nav__logo" href="{% url 'home' %}">
-      <img class="logo" src="{% static 'core/img/icons/app.svg' %}" alt="" />
-      <h3>Ground <span>Zero</span></h3>
-    </a>
-    <ul class="nav__links">
-      <li><a href="{% url 'home' %}" class="nav__link">Inicio</a></li>
-      <li>
-        <a href="{% url 'login' %}" class="nav__link auth">Iniciar sesión</a>
-      </li>
-    </ul>
-    <label for="nav__toggle" class="nav__burger_icon">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </label>
-  </nav>
-  {% block body %} {% endblock %}
-  <div id="modals"></div>
-  <div class="go-up hidden"></div>
-  <footer id="footer">
-    <div class="footer__item">
-      <ul>
-        <li><a href="{% url 'home' %}">Artistas</a></li>
-        <li><a href="{% url 'home' %}">Ediciones limitadas</a></li>
-        <li><a href="{% url 'home' %}">Museos / Fundaciones</a></li>
+  <body>
+    <nav>
+      <input id="nav__toggle" type="checkbox" />
+      <a class="nav__logo" href="{% url 'home' %}">
+        <img class="logo" src="{% static 'core/img/icons/app.svg' %}" alt="" />
+        <h3>Ground <span>Zero</span></h3>
+      </a>
+      <ul class="nav__links">
+        <li><a href="{% url 'home' %}" class="nav__link">Inicio</a></li>
+        <li>
+          <a href="{% url 'login' %}" class="nav__link auth">¿Eres artista?</a>
+        </li>
+        <li>
+          <a href="{% url 'admin-auth' %}" class="nav__link auth">¿Eres admin.?</a>
+        </li>
       </ul>
-    </div>
-    <div class="footer__item">
-      <h3>Nuestras redes</h3>
-      <div class="footer__links">
-        <a class="footer__link" href="https://www.facebook.com">
-          <img src="{% static 'core/img/icons/facebook.svg' %}" alt="Facebook" /></a>
-        <a class="footer__link" href="https://pinterest.com">
-          <img src="{% static 'core/img/icons/pinterest.svg' %}" alt="Pinterest" /></a>
-        <a class="footer__link" href="https://www.instagram.com">
-          <img src="{% static 'core/img/icons/instagram.svg' %}" alt="Instagram" /></a>
+      <label for="nav__toggle" class="nav__burger_icon">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </label>
+    </nav>
+    {% block body %} {% endblock %}
+    <div class="go-up hidden"></div>
+    <footer id="footer">
+      <div class="footer__item">
+        <ul>
+          <li><a href="{% url 'home' %}">Artistas</a></li>
+          <li><a href="{% url 'home' %}">Ediciones limitadas</a></li>
+          <li><a href="{% url 'home' %}">Museos / Fundaciones</a></li>
+        </ul>
       </div>
-    </div>
-    <div class="footer__item" id="temperatura">Cargando...</div>
-    <div class="footer__item">
-      <ul>
-        <li><a href="{% url 'home' %}">Acerca del sitio</a></li>
-        <li><a href="{% url 'home' %}">Condiciones de uso</a></li>
-        <li><a href="{% url 'home' %}">Política de privacidad</a></li>
-      </ul>
-    </div>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
-    crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="{% static 'core/js/main.js' %}"></script>
-  {% block scripts %}{% endblock %}
-</body>
-
+      <div class="footer__item">
+        <h3>Nuestras redes</h3>
+        <div class="footer__links">
+          <a class="footer__link" href="https://www.facebook.com">
+            <img
+              src="{% static 'core/img/icons/facebook.svg' %}"
+              alt="Facebook"
+          /></a>
+          <a class="footer__link" href="https://pinterest.com">
+            <img
+              src="{% static 'core/img/icons/pinterest.svg' %}"
+              alt="Pinterest"
+          /></a>
+          <a class="footer__link" href="https://www.instagram.com">
+            <img
+              src="{% static 'core/img/icons/instagram.svg' %}"
+              alt="Instagram"
+          /></a>
+        </div>
+      </div>
+      <div class="footer__item" id="temperatura">Cargando...</div>
+      <div class="footer__item">
+        <ul>
+          <li><a href="{% url 'home' %}">Acerca del sitio</a></li>
+          <li><a href="{% url 'home' %}">Condiciones de uso</a></li>
+          <li><a href="{% url 'home' %}">Política de privacidad</a></li>
+        </ul>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'core/js/main.js' %}"></script>
+    {% block scripts %}{% endblock %}
+  </body>
 </html>
