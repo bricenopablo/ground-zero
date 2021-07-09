@@ -1,10 +1,11 @@
 from django.urls import path
-from .views import del_arte, home, auth, insertar_arte, arte
+from .views import del_arte, home, auth, insertar_arte, arte, logout
 
 urlpatterns = [
-    path('home/<id>', home, name='admin-home'),
+    path('home/', home, name='admin-home'),
     path('', auth, name='admin-auth'),
     path('arte/agregar', insertar_arte, name='admin-add-arte'),
     path('arte/<id>/', arte, name='admin-mod-arte'),
     path('arte/<id>/borrar/', del_arte, name='admin-del-arte'),
+    path('logout/', logout, name='admin-logout'),
 ]

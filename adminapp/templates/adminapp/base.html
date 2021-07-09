@@ -33,6 +33,11 @@
       <div class="line"></div>
       <div class="line"></div>
     </label>
+    {% if admin %}
+    <ul class="nav__links">
+      <li><a class="nav__link" href="{% url 'admin-logout' %}">Desconectar</a></li>
+    </ul>
+    {% endif %}
   </nav>
   {% block body %} {% endblock %}
   <div class="go-up hidden"></div>

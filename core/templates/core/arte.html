@@ -60,7 +60,7 @@
             <li><b>Nombre de artista:</b> {{arte.idArtista}}</li>
             <li><b>Descripción:</b> {{arte.descripcionArte}}</li>
             <li><b>Publicado:</b> {{ arte.fechaSubida }}</li>
-            <li><b>Precio:</b> {%if arte.precio == 0%} Gratis {% else %} {{arte.precio}} {%endif%}</li>
+            <li><b>Precio:</b> {%if arte.precio == 0%} Gratis {% else %} ${{arte.precio}} {%endif%}</li>
           </ul>
         </div>
         </div>

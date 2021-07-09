@@ -10,21 +10,27 @@ ImageFormSet = modelformset_factory(Imagen, form=ImagenForm, extra=1)
 formset = ImageFormSet(queryset= Imagen.objects.none())
 
 # Create your views here.
-def home(request, id):
-    admin = Administrador.objects.get(idAdmin=id)
-    arte = Arte.objects.all()
-    artista = Artista.objects.all()
-    categoria = Categoria.objects.all()
+def home(request):
+    if 'admin' in request.session:
+        admin = Administrador.objects.get(idAdmin=request.session['admin'])
+        arte = Arte.objects.all()
+        artista = Artista.objects.all()
+        categoria = Categoria.objects.all()
 
-    context = {
-        'artes': arte,
-        'artista': artista,
-        'categorias': categoria,
-        'formulario': ArteForm,
-        'formset': formset,
-        'admin': admin
-    }
-    return render(request, 'adminapp/home.html', context)
+        context = {
+            'artes': arte,
+            'artista': artista,
+            'categorias': categoria,
+            'formulario': ArteForm,
+            'formset': formset,
+            'admin': admin
+        }
+        return render(request, 'adminapp/home.html', context)
+    return redirect('admin-auth')
+
+def logout(request):
+    del request.session['admin']
+    return redirect('home')
 
 def insertar_arte(request):
     if(request.method == 'POST'):
@@ -45,9 +51,12 @@ def insertar_arte(request):
     else:
         formulario = ArteForm()
         formset = ImageFormSet(queryset= Imagen.objects.none())
-    return redirect('admin-home')
+    return redirect('admin-home', request.session['admin'])
 
 def auth(request):
+    if ('admin' in request.session):
+       return redirect('admin-home')
+
     mensaje = {
         'error': ''
     }
@@ -58,7 +67,8 @@ def auth(request):
             user_pass = request.POST['contrasena']
             admin = Administrador.objects.filter(nombreUsuario=user_name, contrasena=user_pass)
             if(admin.count() == 1):
-                return redirect('admin-home', admin.first().idAdmin)
+                request.session['admin'] = admin.first().idAdmin
+                return redirect('admin-home')
             else:
                 mensaje['error'] = 'Credenciales incorrectas'
         else:
