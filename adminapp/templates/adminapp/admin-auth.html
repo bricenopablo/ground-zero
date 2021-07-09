@@ -19,14 +19,32 @@
                 🎨
             </h3>
         </div>
+
+        {% if mensaje.error %}
+            <div class="alert alert-danger">{{ mensaje.error }}</div>
+        {% endif %}
+
+        {% if formulario.errors %}
+          {% for field in formulario %}
+              {% for error in field.errors %}
+                  <div class="alert alert-danger">
+                      <strong>{{ error|escape }}</strong>
+                  </div>
+              {% endfor %}
+          {% endfor %}
+          {% for error in formulario.non_field_errors %}
+              <div class="alert alert-danger">
+                  <strong>{{ error|escape }}</strong>
+              </div>
+          {% endfor %}
+        {% endif %}
+        
+        {% for field in formulario %}
         <div class="auth__field">
-            <label>Usuario</label>
-            <input type="text" placeholder="Nombre de admin" autofocus required name="user_name" />
+           {{ field.label_tag }}
+           {{ field }}
         </div>
-        <div class="auth__field">
-            <label>Contraseña</label>
-            <input type="password" placeholder="Mínimo 8 caracteres" required name="user_pass" />
-        </div>
+        {% endfor %}
         <div class="auth__btn">
             <button>Entrar</button>
         </div>

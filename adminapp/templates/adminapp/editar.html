@@ -1,0 +1,43 @@
+{% extends 'adminapp/base.html' %}
+
+{% load static %}
+
+{% block head %}
+<title>Ground Zero - Administración</title>
+<link rel="stylesheet" href="{% static 'adminapp/css/admin.css' %}" />
+{% endblock %}
+
+{% block body %}
+<div class="admin-main">
+  <div class="admin-card">
+    <h2>Editando {{ arte.nombreArte }}</h2>
+    <form method="POST">
+        {% csrf_token %}
+
+        {% if arteForm.errors %}
+          {% for field in arteForm %}
+              {% for error in field.errors %}
+                  <div class="alert alert-danger">
+                      <strong>{{ error|escape }}</strong>
+                  </div>
+              {% endfor %}
+          {% endfor %}
+          {% for error in arteForm.non_field_errors %}
+              <div class="alert alert-danger">
+                  <strong>{{ error|escape }}</strong>
+              </div>
+          {% endfor %}
+        {% endif %}
+
+        {% for field in arteForm %}
+        <div class="form-field">
+          
+          {{ field.label_tag }}
+          {{ field }}
+        </div>
+      {% endfor %}
+      <button type="submit" class="edit-btn">Actualizar</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
